@@ -34,7 +34,7 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
             res.redirect('/ideas');
         } else {
             res.render('ideas/edit', {
-                idea: idea
+                idea:idea
             });
         }
     })
@@ -57,6 +57,7 @@ router.post('', ensureAuthenticated, (req, res) => {
             errors: errors,
             title: req.body.title,
             details: req.body.details,
+            user: req.user.id
         })
     } else {
         const NewUser = {

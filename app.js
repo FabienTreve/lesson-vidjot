@@ -16,12 +16,13 @@ const users = require('./routes/users');
 
 //Passport Config
 require('./config/passport')(passport);
+const db = require('./config/database');
 
 // Map global promise = get rid of warning (/!\ Pas necessaire, pas la même version que dans le tuto)
 mongoose.Promise = global.Promise;
 
 // Connect to Mongoose
-mongoose.connect('mongodb://localhost/vidjot-dev', {
+mongoose.connect(db.mongoURI, {
     //useMongoClient: true,
 
     // Se débarasser de quelques erreurs
@@ -93,7 +94,7 @@ app.get('/about', (req, res) => {
 app.use('/ideas', ideas);
 app.use('/users', users);
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {                            // Syntaxe fonction ES6
     console.log(`Server started on port ${port}`);  // Equivalent ES6 à console.log('Server ...' + port); ---- /!\==> ` ` et non ' '
