@@ -31,7 +31,7 @@ mongoose.connect(db.mongoURI, {
     useUnifiedTopology: true,
 })
 .then(() => console.log(`MongoDB connected... ${db.mongoURI}`))
-.catch(err => console.log(err));
+.catch(err => console.log(err + db.mongoURI));
 
 
 // --------------------- MIDDLEWARES ---------------------
