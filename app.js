@@ -23,7 +23,7 @@ mongoose.Promise = global.Promise;
 
 // Connect to Mongoose
 //mongoose.connect(process.env.mongoURI, {
-mongoose.connect(db.mongoURI, {
+/*mongoose.connect(db.mongoURI, {
     //useMongoClient: true,
 
     // Se débarasser de quelques erreurs
@@ -31,8 +31,8 @@ mongoose.connect(db.mongoURI, {
     useUnifiedTopology: true,
 })
 .then(() => console.log(`MongoDB connected... ${db.mongoURI}`))
-.catch(err => console.log(err + db.mongoURI));
-
+.catch(err => console.log(err + db.mongoURI));*/
+mongoose.connect(db.mongoURI);
 
 // --------------------- MIDDLEWARES ---------------------
 
