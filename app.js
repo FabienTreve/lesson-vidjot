@@ -23,7 +23,7 @@ mongoose.Promise = global.Promise;
 
 // Connect to Mongoose
 //mongoose.connect(process.env.mongoURI, {
-/*mongoose.connect(db.mongoURI, {
+mongoose.connect(db.mongoURI, {
     //useMongoClient: true,
 
     // Se débarasser de quelques erreurs
@@ -31,11 +31,9 @@ mongoose.Promise = global.Promise;
     useUnifiedTopology: true,
 })
 .then(() => console.log(`MongoDB connected... ${db.mongoURI}`))
-.catch(err => console.log(err + db.mongoURI));*/
-
-
+.catch(err => console.log(err + db.mongoURI));
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://FabienT:623ukJKRGtGAewYW@clusterftr-wrdqy.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://FabienT:TODtNi8rldnwQ6x9@clusterftr-wrdqy.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("users");
