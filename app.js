@@ -32,14 +32,6 @@ mongoose.connect(db.mongoURI, {
 })
 .then(() => console.log(`MongoDB connected... ${db.mongoURI}`))
 .catch(err => console.log(err + db.mongoURI));
-/*const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://FabienT:TODtNi8rldnwQ6x9@clusterftr-wrdqy.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("users");
-  // perform actions on the collection object
-  client.close();
-});*/
 
 // --------------------- MIDDLEWARES ---------------------
 
