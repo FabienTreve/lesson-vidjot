@@ -22,7 +22,6 @@ const db = require('./config/database');
 mongoose.Promise = global.Promise;
 
 // Connect to Mongoose
-//mongoose.connect(process.env.mongoURI, {
 mongoose.connect(db.mongoURI, {
     //useMongoClient: true,
 
