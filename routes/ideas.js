@@ -12,10 +12,10 @@ router.get('/', ensureAuthenticated, (req, res) => {
     Idea.find({user: req.user.id})
         .sort({date:'desc'})
         .then(ideas => {
-            console.log(ideas)
-            /*res.render('ideas/index', {
+            console.log(ideas._id)
+            res.render('ideas/index', {
                 ideas:ideas
-            });*/
+            });
         });    
 }); 
 
