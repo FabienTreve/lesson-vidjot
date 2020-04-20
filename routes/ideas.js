@@ -11,8 +11,9 @@ const Idea = mongoose.model('ideas');
 router.get('/', ensureAuthenticated, (req, res) => {
     Idea.find({user: req.user.id})
         .sort({date:'desc'})
+        .lean()
         .then(ideas => {
-            console.log(ideas._id)
+            console.log(ideas)
             res.render('ideas/index', {
                 ideas:ideas
             });
