@@ -13,7 +13,6 @@ router.get('/', ensureAuthenticated, (req, res) => {
         .sort({date:'desc'})
         .lean()
         .then(ideas => {
-            console.log(ideas)
             res.render('ideas/index', {
                 ideas:ideas
             });
@@ -30,6 +29,7 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
     Idea.findOne({
         _id: req.params.id
     })
+    .lean()
     .then(idea => {
         if(idea.user != req.user.id){
             req.flash('error_msg', 'Not Authorized');
