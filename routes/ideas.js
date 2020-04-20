@@ -88,7 +88,7 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
                 req.flash('success_msg', 'Video idea updated');
                 res.redirect('/ideas');
             })
-    })
+    });
 });
 
 //Delete Idea
@@ -97,7 +97,7 @@ router.delete('/:id', ensureAuthenticated, (req, res) => {
     .then(() => {
         req.flash('success_msg', 'Video Idea removed');
         res.redirect('/ideas');
-    })
+    });
 });
 
 module.exports = router;

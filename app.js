@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
 const exphbs  = require("express-handlebars");
-const flash  = require("connect-flash");
-const session  = require("express-session");
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const flash = require("connect-flash");
+const session = require("express-session");
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const passport = require('passport');
+const mongoose = require('mongoose');
 
 const app = express();
 
